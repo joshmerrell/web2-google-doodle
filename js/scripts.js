@@ -7,3 +7,14 @@ gsap.fromTo(".baddie", {
     repeat: -1,
     yoyoEase: true
 });
+
+gsap.fromTo(".asteroid", {
+    rotation: "0deg",
+}, {
+    stagger: 0.1,
+    rotation: "360deg",
+    repeat: -1,
+    transformOrigin: "center",
+    duration: 5,
+    ease: "elastic"
+});
