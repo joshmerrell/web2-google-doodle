@@ -15,6 +15,6 @@ gsap.fromTo(".asteroid", {
     rotation: "360deg",
     repeat: -1,
     transformOrigin: "center",
-    duration: 5,
-    ease: "elastic"
+    duration: 10,
+    ease: "easeInOut"
 });
