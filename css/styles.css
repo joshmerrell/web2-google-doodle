@@ -16,10 +16,22 @@
   width: 600px;
 }
 
-#heart1 {
-  fill: red;
+.google-letter {
+  fill: #00d000
 }
 
-#heart2 {
-  fill: green;
+svg {
+  background: black;
+}
+
+.vector-obj {
+  stroke: white;
+}
+
+g.baddie {
+/*   fill: red; */
+}
+
+.vector-obj {
+/*   fill: blue; */
 }
