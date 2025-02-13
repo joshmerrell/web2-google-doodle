@@ -10,9 +10,12 @@ gsap.fromTo(".baddie", {
 
 gsap.fromTo(".asteroid", {
     rotation: "0deg",
+    x: -400,
+    stagger: 5
 }, {
-    stagger: 0.1,
+    stagger: 4,
     rotation: "360deg",
+    x: 800,
     repeat: -1,
     transformOrigin: "center",
     duration: 10,
