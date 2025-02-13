@@ -22,16 +22,9 @@
 
 svg {
   background: black;
+  fill: black;
 }
 
 .vector-obj {
   stroke: white;
-}
-
-g.baddie {
-/*   fill: red; */
-}
-
-.vector-obj {
-/*   fill: blue; */
 }
