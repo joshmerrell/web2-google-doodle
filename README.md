@@ -13,3 +13,4 @@ These limitations required innovation and extreme optimization from developers.
 ## Sources
 - Google letters come from the official Google logo SVG
 - GSAP
+- [Vector Battle Font](https://www.fontspace.com/vector-battle-font-f3349) by Freaky Fonts

@@ -1,19 +1,8 @@
-/* My Awesome Styles */
-
-/* Diagnostic Styling 
-  * Change Background Color
-  * Outline Elements
-*/
-
-* {
-    outline: 1px dotted black;
-}
-
 /* Doodle Stage */
 #stage {
   background: #ccc;
   height: 300px;
-  width: 600px;
+  width: 750px;
 }
 
 .google-letter {
@@ -27,4 +16,16 @@ svg {
 
 .vector-obj {
   stroke: white;
+}
+
+@font-face {
+  font-family: 'VectorBattle';
+  src: url('/fonts/VectorBattle-e9XO.ttf') format('truetype');
+}
+
+.google-vector {
+  font-family: 'VectorBattle';
+  font-size: 4em;
+  fill: #00d000;
+  text-anchor: middle;
 }
