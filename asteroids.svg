@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="750"
+   height="300"
+   viewBox="0 0 750 300"
+   version="1.1"
+   id="svg20"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <g
+     class="ship vector-obj"
+     id="g2"
+     style="stroke:#ffffff;stroke-opacity:1">
+    <path
+       d="M387 285.55L397.5 253L408 285.55"
+       id="path1"
+       style="stroke:#ffffff;stroke-opacity:1" />
+    <path
+       d="M388.26 281.14L406.74 281.14"
+       id="path2"
+       style="stroke:#ffffff;stroke-opacity:1" />
+  </g>
+  <g
+     class="baddie vector-obj"
+     id="g6"
+     style="stroke:#ffffff;stroke-opacity:1">
+    <path
+       d="M286 162.811V195.401L294.39 185.721L304.07 195.401L313.75 185.721L323.43 195.401L333.11 185.721L341.5 195.401V162.811L325.689 147H301.811L286 162.811Z"
+       id="path3"
+       style="stroke:#ffffff;stroke-opacity:1" />
+    <path
+       d="M304.164 155.712L309.555 164.747L299.23 164.747L304.164 155.712Z"
+       id="path4"
+       style="stroke:#ffffff;stroke-opacity:1" />
+    <path
+       d="M323 156L328.916 164.747L318.59 164.747L323 156Z"
+       id="path5"
+       style="stroke:#ffffff;stroke-opacity:1" />
+    <path
+       d="M299.552 182.494L292.131 175.073H336.015L328.593 182.494L323.753 177.654L318.913 182.494L314.073 177.654L309.233 182.494L304.392 177.654L299.552 182.494Z"
+       id="path6"
+       style="stroke:#ffffff;stroke-opacity:1" />
+  </g>
+  <g
+     class="baddie vector-obj"
+     id="g10"
+     style="stroke:#ffffff;stroke-opacity:1">
+    <path
+       d="M359 162.811V195.401L367.39 185.721L377.07 195.401L386.75 185.721L396.43 195.401L406.11 185.721L414.5 195.401V162.811L398.689 147H374.811L359 162.811Z"
+       id="path7"
+       style="stroke:#ffffff;stroke-opacity:1" />
+    <path
+       d="M377.164 155.712L382.555 164.747L372.23 164.747L377.164 155.712Z"
+       id="path8"
+       style="stroke:#ffffff;stroke-opacity:1" />
+    <path
+       d="M396 156L401.916 164.747L391.59 164.747L396 156Z"
+       id="path9"
+       style="stroke:#ffffff;stroke-opacity:1" />
+    <path
+       d="M372.552 182.494L365.131 175.073H409.015L401.593 182.494L396.753 177.654L391.913 182.494L387.073 177.654L382.233 182.494L377.392 177.654L372.552 182.494Z"
+       id="path10"
+       style="stroke:#ffffff;stroke-opacity:1" />
+  </g>
+  <g
+     class="baddie vector-obj"
+     id="g14"
+     style="stroke:#ffffff;stroke-opacity:1">
+    <path
+       d="M432 162.811V195.401L440.39 185.721L450.07 195.401L459.75 185.721L469.43 195.401L479.11 185.721L487.5 195.401V162.811L471.689 147H447.811L432 162.811Z"
+       id="path11"
+       style="stroke:#ffffff;stroke-opacity:1" />
+    <path
+       d="M450.164 155.712L455.555 164.747L445.23 164.747L450.164 155.712Z"
+       id="path12"
+       style="stroke:#ffffff;stroke-opacity:1" />
+    <path
+       d="M469 156L474.916 164.747L464.59 164.747L469 156Z"
+       id="path13"
+       style="stroke:#ffffff;stroke-opacity:1" />
+    <path
+       d="M445.552 182.494L438.131 175.073H482.015L474.593 182.494L469.753 177.654L464.913 182.494L460.073 177.654L455.233 182.494L450.392 177.654L445.552 182.494Z"
+       id="path14"
+       style="stroke:#ffffff;stroke-opacity:1" />
+  </g>
+  <path
+     class="asteroid vector-obj"
+     d="M128 196.5H105L120.5 224L152 217.5L157 196.5L146.5 180H115L128 196.5Z"
+     id="path15"
+     style="stroke:#ffffff;stroke-opacity:1" />
+  <path
+     class="asteroid vector-obj"
+     d="M152 105L115 112L120.5 127.5V146L163.5 143L170 117L152 105Z"
+     id="path16"
+     style="stroke:#ffffff;stroke-opacity:1" />
+  <path
+     class="asteroid vector-obj"
+     d="M207 54.5L180 71.5V93.5L205 110L239.5 102L243.5 75L231 60L207 54.5Z"
+     id="path17"
+     style="stroke:#ffffff;stroke-opacity:1" />
+  <g
+     class="vector-obj"
+     id="g20"
+     style="stroke:#ffffff;stroke-opacity:1">
+    <path
+       d="M595.371 200.5L565.097 185L595.371 169.5L657.629 169.5L687.903 185L657.629 200.5L595.371 200.5Z"
+       id="path18"
+       style="stroke:#ffffff;stroke-opacity:1" />
+    <path
+       d="M637.009 156.5L646.963 169L637.25 169L615.75 169L606.037 169L615.991 156.5L637.009 156.5Z"
+       id="path19"
+       style="stroke:#ffffff;stroke-opacity:1" />
+    <path
+       d="M565 185H687.5"
+       id="path20"
+       style="stroke:#ffffff;stroke-opacity:1" />
+  </g>
+  <path
+     style="-inkscape-font-specification:'Vector Battle';fill:none;stroke:#ffffff;stroke-opacity:1"
+     d="m 286.1041,62.472283 h 21.56252 V 84.993134 H 278.97909 V 44.888937 h 28.68753 v 5.291671 m 4.08333,34.812526 V 44.888937 h 28.68753 v 40.104197 z m 32.77086,0 V 44.888937 h 28.68752 v 40.104197 z m 39.89587,-22.520851 h 21.56251 V 84.993134 H 377.29167 V 44.888937 h 28.68752 v 5.291671 m 32.77086,34.812526 H 410.06253 V 44.888937 m 61.45838,40.104197 H 442.83339 V 44.888937 h 28.68752 m 0,18.083347 h -28.16669"
+     id="text20"
+     aria-label="Google" />
+</svg>
