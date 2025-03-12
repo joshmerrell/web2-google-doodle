@@ -6,7 +6,8 @@
 }
 
 .google-letter {
-  fill: #00d000
+  stroke: #00d000;
+  fill: none;
 }
 
 svg {
@@ -16,6 +17,7 @@ svg {
 
 .vector-obj {
   stroke: white;
+  /* stroke-width: 2px; */
 }
 
 @font-face {
