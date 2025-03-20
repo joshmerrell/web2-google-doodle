@@ -1,5 +1,5 @@
 console.clear();
-gsap.registerPlugin(MotionPathPlugin) 
+gsap.registerPlugin(MotionPathPlugin); // allows us to have the ship follow a path
 const numAsteroids = 20;
 const asteroidPaths = [
     "M128 196.5H105L120.5 224L152 217.5L157 196.5L146.5 180H115L128 196.5Z",
@@ -27,6 +27,7 @@ for(let i = 0; i < numStars; i++) {
     makeStar(randBetween(0, svgWidth), randBetween(0, svgHeight));
 }
 
+// Add asteroids to the stage
 for(let i = 0; i < numAsteroids; i++) {
     const asteroid = document.createElement("path");
     asteroid.className = "asteroid vector-obj";
@@ -37,6 +38,8 @@ for(let i = 0; i < numAsteroids; i++) {
 const totalAsteroids = document.querySelectorAll(".asteroid").length;
 const tl = gsap.timeline({repeat: -1, repeatDelay: 1});
 
+
+// have UFO move back and forth
 tl.fromTo(".ufo", {
     x: -50,
 }, {
@@ -106,7 +109,7 @@ for (const asteroid of asteroids) {
             break;
     }
     
-    console.log(`Asteroid from ${fromX}, ${fromY} to ${toX}, ${toY}`);
+    // console.log(`Asteroid from ${fromX}, ${fromY} to ${toX}, ${toY}`);
 
     gsap.fromTo(asteroid, {
         x: fromX,
@@ -124,20 +127,6 @@ for (const asteroid of asteroids) {
     });
 }
 
-// tl.fromTo(".asteroid", {
-//     rotation: "0deg",
-//     x: Math.random()-400,
-//     stagger: 1
-// }, {
-//     stagger: 2,
-//     rotation: "360deg",
-//     x: 800,
-//     repeat: -1,
-//     transformOrigin: "center",
-//     duration: 10,
-//     ease: "power1.inOut"
-// });
-
 gsap.to(".ship", {
     motionPath: {
         path: "#ship-path",
@@ -148,6 +137,5 @@ gsap.to(".ship", {
     transformOrigin: "50% 50%",
     duration: 5,
     repeat: -1,
-    // yoyo: true,  
     ease: "power1.inOut"
 });
