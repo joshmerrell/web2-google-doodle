@@ -20,6 +20,10 @@ svg {
   /* stroke-width: 2px; */
 }
 
+.asteroid {
+  fill: black;
+}
+
 @font-face {
   font-family: 'VectorBattle';
   src: url('/fonts/VectorBattle-e9XO.ttf') format('truetype');

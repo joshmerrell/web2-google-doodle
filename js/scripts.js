@@ -1,6 +1,6 @@
 console.clear();
 gsap.registerPlugin(MotionPathPlugin) 
-const numAsteroids = 7;
+const numAsteroids = 20;
 const asteroidPaths = [
     "M128 196.5H105L120.5 224L152 217.5L157 196.5L146.5 180H115L128 196.5Z",
     "M152 105L115 112L120.5 127.5V146L163.5 143L170 117L152 105Z",
@@ -16,10 +16,15 @@ function randBetween(a, b) {
 }
 
 function makeStar(x,y) {
-    const starPath = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    const starPath = document.createElementNS("http://www.w3.org/2000/svg", "path"); // path must be self-closing, otherwise it will not render
     starPath.setAttribute("class", "star vector-obj");
     starPath.setAttribute("d", `m ${x},${y} 1,0`);
     document.querySelector("#stage svg").appendChild(starPath);
+}
+
+// Create stars for the background
+for(let i = 0; i < numStars; i++) {
+    makeStar(randBetween(0, svgWidth), randBetween(0, svgHeight));
 }
 
 for(let i = 0; i < numAsteroids; i++) {
@@ -43,64 +48,95 @@ tl.fromTo(".ufo", {
     yoyoEase: true
 });
 
-for(let i = 0; i < numStars; i++) {
-    makeStar(randBetween(0, svgWidth), randBetween(0, svgHeight));
-}
-
+tl.fromTo(".thrust", {
+    opacity: 0
+}, {
+    opacity: 1,
+    duration: 0.01,
+    repeat: -1,
+    yoyo: true
+})
 
 console.log(`Setting up ${totalAsteroids} asteroids`);
 const asteroids = document.querySelectorAll(".asteroid");
-const xOffset = 20;
-const yOffset = 20;
+const xOffset = 200;
+const yOffset = 200;
 
 for (const asteroid of asteroids) {
-    const ltr = true; // Math.random() > 0.5;
     let fromX = 0;
     let toX = 0;
     let fromY = 0;
     let toY = 0;
-    const randXMod = randBetween(0, 10);
-    const randYMod = randBetween(0, 10);
-    if(ltr) {
-        fromX = -xOffset - randXMod;
-        toX = svgWidth + xOffset + randXMod;
-        fromY = -yOffset - randYMod;
-        toY = svgHeight + yOffset + randYMod;
-    } else {
-        fromX = svgWidth + xOffset + randXMod;
-        toX = -xOffset - randXMod;
-        fromY = svgHeight + xOffset + randYMod;
-        toY = -xOffset - randYMod;
+    const fromWhere = randBetween(0, 3); // 0 = top, 1 = right, 2 = bottom, 3 = left
+    const toWhere = randBetween(0, 3);
+    switch(fromWhere) {
+        case 0:
+            fromX = randBetween(0, svgWidth);
+            fromY = -yOffset;
+            break;
+        case 1:
+            fromX = svgWidth + xOffset;
+            fromY = randBetween(0, svgHeight);
+            break;
+        case 2:
+            fromX = randBetween(0, svgWidth);
+            fromY = svgHeight + yOffset;
+            break;
+        case 3:
+            fromX = -xOffset;
+            fromY = randBetween(0, svgHeight);
+            break;
     }
-    // console.log(asteroid)
-    // console.log(`Asteroid from ${fromX}, ${fromY} to ${toX}, ${toY}`);
+    switch(toWhere) {
+        case 0:
+            toX = randBetween(0, svgWidth);
+            toY = -yOffset;
+            break;
+        case 1:
+            toX = svgWidth + xOffset;
+            toY = randBetween(0, svgHeight);
+            break;
+        case 2:
+            toX = randBetween(0, svgWidth);
+            toY = svgHeight + yOffset;
+            break;
+        case 3:
+            toX = -xOffset;
+            toY = randBetween(0, svgHeight);
+            break;
+    }
+    
+    console.log(`Asteroid from ${fromX}, ${fromY} to ${toX}, ${toY}`);
 
-    tl.fromTo(asteroid, {
+    gsap.fromTo(asteroid, {
         x: fromX,
         y: fromY,
+        rotation: randBetween(0, 360)
     }, {
         x: toX,
         y: toY,
+        rotation: randBetween(0, 360),
         duration: 5,
         repeat: -1,
-        yoyo: true,
-        ease: "easeInOut"
+        // yoyo: true,
+        transformOrigin: "center",
+        ease: "none"
     });
 }
 
-tl.fromTo(".asteroid", {
-    rotation: "0deg",
-    x: Math.random()-400,
-    stagger: 1
-}, {
-    stagger: 2,
-    rotation: "360deg",
-    x: 800,
-    repeat: -1,
-    transformOrigin: "center",
-    duration: 10,
-    ease: "power1.inOut"
-});
+// tl.fromTo(".asteroid", {
+//     rotation: "0deg",
+//     x: Math.random()-400,
+//     stagger: 1
+// }, {
+//     stagger: 2,
+//     rotation: "360deg",
+//     x: 800,
+//     repeat: -1,
+//     transformOrigin: "center",
+//     duration: 10,
+//     ease: "power1.inOut"
+// });
 
 gsap.to(".ship", {
     motionPath: {
