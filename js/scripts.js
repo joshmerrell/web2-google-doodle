@@ -1,11 +1,12 @@
 console.clear();
 gsap.registerPlugin(MotionPathPlugin) 
-const numAsteroids = 3;
+const numAsteroids = 7;
 const asteroidPaths = [
     "M128 196.5H105L120.5 224L152 217.5L157 196.5L146.5 180H115L128 196.5Z",
     "M152 105L115 112L120.5 127.5V146L163.5 143L170 117L152 105Z",
     "M207 54.5L180 71.5V93.5L205 110L239.5 102L243.5 75L231 60L207 54.5Z"
-]
+];
+const numStars = 50;
 const svg = document.querySelector("#stage svg");
 const svgWidth = svg.viewBox.baseVal.width;
 const svgHeight = svg.viewBox.baseVal.height;
@@ -14,8 +15,11 @@ function randBetween(a, b) {
     return Math.floor(Math.random() * (b - a + 1) + a);
 }
 
-Array.prototype.pickRandom = function() {
-    return this[randBetween(0, this.length - 1)];
+function makeStar(x,y) {
+    const starPath = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    starPath.setAttribute("class", "star vector-obj");
+    starPath.setAttribute("d", `m ${x},${y} 1,0`);
+    document.querySelector("#stage svg").appendChild(starPath);
 }
 
 for(let i = 0; i < numAsteroids; i++) {
@@ -28,14 +32,20 @@ for(let i = 0; i < numAsteroids; i++) {
 const totalAsteroids = document.querySelectorAll(".asteroid").length;
 const tl = gsap.timeline({repeat: -1, repeatDelay: 1});
 
-tl.fromTo(".baddie", {
+tl.fromTo(".ufo", {
     x: -50,
 }, {
+    transformOrigin: "center",
+    ease: "power1.inOut",
     x: 50,
     duration: 1,
     repeat: -1,
     yoyoEase: true
 });
+
+for(let i = 0; i < numStars; i++) {
+    makeStar(randBetween(0, svgWidth), randBetween(0, svgHeight));
+}
 
 
 console.log(`Setting up ${totalAsteroids} asteroids`);
@@ -89,7 +99,7 @@ tl.fromTo(".asteroid", {
     repeat: -1,
     transformOrigin: "center",
     duration: 10,
-    ease: "easeInOut"
+    ease: "power1.inOut"
 });
 
 gsap.to(".ship", {
