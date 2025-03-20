@@ -1,6 +1,6 @@
 console.clear();
 gsap.registerPlugin(MotionPathPlugin); // allows us to have the ship follow a path
-const numAsteroids = 20;
+const numAsteroids = 50;
 const asteroidPaths = [
     "M128 196.5H105L120.5 224L152 217.5L157 196.5L146.5 180H115L128 196.5Z",
     "M152 105L115 112L120.5 127.5V146L163.5 143L170 117L152 105Z",
@@ -74,38 +74,38 @@ for (const asteroid of asteroids) {
     const toWhere = randBetween(0, 3);
     switch(fromWhere) {
         case 0:
-            fromX = randBetween(0, svgWidth);
+            fromX = randBetween(-xOffset, svgWidth + xOffset);
             fromY = -yOffset;
             break;
         case 1:
             fromX = svgWidth + xOffset;
-            fromY = randBetween(0, svgHeight);
+            fromY = randBetween(-yOffset, svgHeight + yOffset);
             break;
         case 2:
-            fromX = randBetween(0, svgWidth);
+            fromX = randBetween(-xOffset, svgWidth + xOffset);
             fromY = svgHeight + yOffset;
             break;
         case 3:
             fromX = -xOffset;
-            fromY = randBetween(0, svgHeight);
+            fromY = randBetween(-xOffset, svgHeight + yOffset);
             break;
     }
     switch(toWhere) {
         case 0:
-            toX = randBetween(0, svgWidth);
+            toX = randBetween(-xOffset, svgWidth + xOffset);
             toY = -yOffset;
             break;
         case 1:
             toX = svgWidth + xOffset;
-            toY = randBetween(0, svgHeight);
+            toY = randBetween(-xOffset, svgHeight + yOffset);
             break;
         case 2:
-            toX = randBetween(0, svgWidth);
+            toX = randBetween(-xOffset, svgWidth + xOffset);
             toY = svgHeight + yOffset;
             break;
         case 3:
             toX = -xOffset;
-            toY = randBetween(0, svgHeight);
+            toY = randBetween(-xOffset, svgHeight + yOffset);
             break;
     }
     
